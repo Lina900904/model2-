@@ -1,0 +1,36 @@
+	
+	style>table,th,td{border : 1px solid black}
+	.width-full{width:100%}
+	.width-10{width:10%}
+	.width-20{width:20%}
+	.width-30{width:30%}
+	.width-60{width:60%}	
+	.height-full{height:100%}
+	.height-500{height:500px}
+	.height-100{height:100px}
+	.height-350{height:350px}
+	.height-250{height:250px}	
+
+	.margin-outo{margin:"0 outo"}
+	/* 	main */
+	.margin-tab-layout{width:60%;height:350px}
+	
+		/* 	user */
+	#user-Login-Layout{width : 250px;margin: 150px auto}
+	#user-Login-form{border: 1px solid black}	
+	
+		/* 	admin */
+	#admin-Login-Layout{width : 250px;margin: 150px auto}
+	#admin-Login-form{border: 1px solid black}	
+	
+	
+			/* 	join */
+	#join-Layout{width : 250px;margin: 150px auto}
+	#join-Layout{border: 1px solid black}	
+	
+/* 	"member_list"  */
+	#member_list{border: 1px solid black}
+		
+		/* 	"searchTeam"  */
+	#searchTeam{border: 1px solid black}
+		
