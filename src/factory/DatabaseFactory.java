@@ -1,6 +1,5 @@
 package factory;
 
-import java.awt.Shape;
 import java.sql.Connection;
 
 import enums.Vendor;

@@ -11,6 +11,7 @@ import service.MemberServiceImpl;
 
 public class ListCommand extends Command{
 
+
 	public ListCommand(HttpServletRequest request) {
 		setRequest(request);
 		setDomain(request.getServletPath().substring(1, request.getServletPath().indexOf(".")));
@@ -22,15 +23,13 @@ public class ListCommand extends Command{
 	
 	@Override
 	public void execute() {
-	switch (Domain.valueOf(Sentry.cmd.domain.toUpperCase())) {
-	case MEMBER:
-		List<MemberBean> lst = MemberServiceImpl.getInstance().memberList();
-		break;
+	request.setAttribute("list", MemberServiceImpl.getInstance().memberList());
 
-	default:
-		break;
+	
+	super.execute();
 	}
-	}
+
+
 
 	
 }

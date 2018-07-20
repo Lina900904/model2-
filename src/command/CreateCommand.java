@@ -9,20 +9,21 @@ import enums.Domain;
 import service.MemberServiceImpl;
 
 public class CreateCommand extends Command{
+	MemberBean joinm;
 	public CreateCommand(HttpServletRequest request) {
 		setRequest(request);
 		setDomain(request.getServletPath().substring(1,request.getServletPath().indexOf(".")));
 		setAction(request.getParameter("action"));
 		setPage(request.getParameter("page"));
-		execute();
+		execute(); //this.이 생략되어있다
 	}
 	
 	@Override
 	public void execute() {
-		switch(Domain.valueOf(Sentry.cmd.domain.toUpperCase())) {
+		switch(Domain.valueOf(domain.toUpperCase())) { 
 		case MEMBER:
 			System.out.println("조인안으로 진입");
-			MemberBean joinm = new MemberBean();			 
+			joinm = new MemberBean();			 
 			joinm.setId(request.getParameter("userid"));
 			joinm.setName(request.getParameter("name"));
 			joinm.setPassword(request.getParameter("password"));
@@ -36,7 +37,7 @@ public class CreateCommand extends Command{
 			break;
 		
 		}
-		
+		super.execute();
 		
 
 		

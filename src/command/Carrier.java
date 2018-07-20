@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Carrier {
+public class Carrier { //해당 페이지로 이동하는 역할만
 	public static void forword(HttpServletRequest request,
 			HttpServletResponse response) {
 	try {
@@ -23,6 +23,7 @@ public class Carrier {
 			HttpServletResponse response, String url) {
 		try {
 			response.sendRedirect(request.getContextPath()+url);
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

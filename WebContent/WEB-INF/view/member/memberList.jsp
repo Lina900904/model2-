@@ -11,8 +11,11 @@
 	<link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
-	<table id="member_list" class = "height = 100">
-	
+
+
+
+리스트용
+	<%-- 	
 		<tr>
 			<td>아이디</td>
 			<td>이름</td>
@@ -38,6 +41,6 @@
 	</table>
 	<input type="hidden" name = "action" value = "memberlist" />
 	
-	
+	 --%>
 </body>
 </html>

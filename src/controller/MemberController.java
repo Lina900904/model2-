@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.Carrier;
+import command.SearchCommand;
 import command.Sentry;
 import domain.MemberBean;
 import service.MemberServiceImpl;
@@ -24,7 +25,8 @@ public class MemberController extends HttpServlet {
 		
 		String action =request.getParameter("action");
 		String page = request.getParameter("page");
-		Sentry.init(request);
+		Sentry.init(request, response); // sentry.cmd를 만들었다
+		
 		
 				
 			switch(Action.valueOf(Sentry.cmd.getAction().toUpperCase())) {
@@ -34,24 +36,33 @@ public class MemberController extends HttpServlet {
 				break;
 			case JOIN: 
 				Carrier.redirect(request,response,"/member.do?action=move&page=user_login_form");
-
-			
+				break;
+			case COUNT: 
+				
 				break;
 			case LIST : 
+				System.out.println("리스트~~~");
 				Carrier.redirect(request,response,"/member.do?action=move&page=memberList");				
 				break;
 			
 			case LOGIN :
-				Carrier.redirect(request, response, "/member.do?action=move&page=user_login_result");
+				if(request.getAttribute("match").equals("TRUE")) {
+					Carrier.forword(request, response);
+				}else {
+					Carrier.redirect(request, response, "/member.do?action=move&page=user_login_result");
+				}
+		
 				break;
 			case RETRIEVE :
 				Carrier.redirect(request, response, "/member.do?action=move&page=searchIdResult");
 				break;
 			case SEARCH : 
+
 				Carrier.redirect(request, response, "/member.do?action=move&page=searchTeamResult");
 				break;
 			case UPDATE : 
 				Carrier.redirect(request, response, "/member.do?action=move&page=updateResult");
+				
 				break;
 			case DELETE : 
 				Carrier.redirect(request, response, "/member.do?action=move&page=deleteResult");

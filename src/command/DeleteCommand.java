@@ -1,5 +1,7 @@
 package command;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import domain.MemberBean;
@@ -7,6 +9,11 @@ import enums.Domain;
 import service.MemberServiceImpl;
 
 public class DeleteCommand extends Command{
+	List<MemberBean> list;
+	public List<MemberBean> getList() {
+		return list;
+	}
+
 	public DeleteCommand(HttpServletRequest request) {
 		setRequest(request);
 		setDomain(request.getServletPath().substring(1, request.getServletPath().indexOf(".")));
@@ -29,7 +36,7 @@ public class DeleteCommand extends Command{
 		default:
 			break;
 		}
-	
+		super.execute();
 	}
 
 }

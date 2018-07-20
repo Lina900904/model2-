@@ -1,10 +1,22 @@
 package command;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import domain.MemberBean;
 
 public class Command implements Order{
+
+
 	protected HttpServletRequest request;
-	protected String action, domain, page, view;
+	protected String action, domain, page, view;	
+
+
+
+
+
 	
 	public HttpServletRequest getRequest() {
 		return request;
