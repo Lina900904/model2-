@@ -67,6 +67,9 @@ public class MemberController extends HttpServlet {
 			case DELETE : 
 				Carrier.redirect(request, response, "/member.do?action=move&page=deleteResult");
 				break;
+				
+				
+		
 			default:
 				break;
 				

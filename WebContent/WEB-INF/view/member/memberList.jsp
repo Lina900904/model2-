@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>MEMBER_LIST</title>
-	<link rel="stylesheet" href="../../css/style.css" />
+<jsp:include page="../common/head.jsp" />
 </head>
 <body>
 

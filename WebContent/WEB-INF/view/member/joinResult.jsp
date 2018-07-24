@@ -10,11 +10,20 @@
 	<title>JOINFORM</title>
 </head>
 <body>
+	<script>
+function moveForm(){
+	return false;
+	}
+</script>
 	
 
-<form action="/member/user_login_form.do">
+<!-- <form action="/member/user_login_form.do">
 	<input type="submit" value="로그인하러가기" />
+</form> -->
+
+<form name = "move" action="/member/user_login_form.do"
+onsubmit="return moveForm()" method="get">
+<input type="submit" value="로그인하러가기" />
 </form>
-	
 </body>
 </html>

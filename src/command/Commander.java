@@ -49,6 +49,7 @@ public class Commander {
 		case DELETE :
 			cmd = new DeleteCommand(request);
 			break;
+
 		default:
 			break;
 			

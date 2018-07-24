@@ -12,8 +12,10 @@ import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing.Validation;
 import domain.*;
 import enums.*;
 import factory.*;
+
 import oracle.jdbc.driver.DBConversion;
 import pool.*;
+
 
 public class MemberDAOImpl implements MemberDAO {
 	private static MemberDAO instance = new MemberDAOImpl();
